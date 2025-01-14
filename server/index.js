@@ -1,14 +1,13 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import helmet from 'helmet';
-import morgan from 'morgan';
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import morgan from "morgan";
 
-import propertiesRoute from './routes/properties.js';
-import clientsRoute from './routes/clients.js'
-import transactionsRoute from './routes/transactions.js'
-
+import propertiesRoute from "./routes/properties.js";
+import clientsRoute from "./routes/clients.js";
+import transactionsRoute from "./routes/transactions.js";
 
 // Configurations
 dotenv.config();
@@ -24,9 +23,7 @@ app.use(cors());
 // Routes
 
 app.use("/properties", propertiesRoute);
-app.use("/clients", clientsRoute)
-app.use("/transactions", transactionsRoute)
+app.use("/clients", clientsRoute);
+app.use("/transactions", transactionsRoute);
 
-
-
-app.listen(3100, console.log("server started"));
+app.listen(3100, console.log("Server running on 3100"));

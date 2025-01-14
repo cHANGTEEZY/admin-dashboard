@@ -13,7 +13,6 @@ export const pool = new Pool({
   port: process.env.PG_PORT,
 });
 
-
 async function testConnection() {
   try {
     const client = await pool.connect();
@@ -21,7 +20,7 @@ async function testConnection() {
     client.release();
   } catch (err) {
     console.error("Error connecting to the database:", err.message);
-    process.exit(1); // Optional: exit the process if the database connection fails
+    process.exit(1);
   }
 }
 
